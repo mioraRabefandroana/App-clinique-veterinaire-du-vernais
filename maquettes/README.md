@@ -2,4 +2,4 @@
 
 - Houssainatou-Miora_Maquettes_v2.pdf: les maquettes interactives AVEC surlignage en rouge des liens cliquables
 
-- Clinique Veterinaire.bmpr : projet blasamiq
+- Clinique Veterinaire.bmpr : projet balsamiq
