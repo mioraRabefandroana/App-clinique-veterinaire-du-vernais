@@ -2,7 +2,7 @@
 import FooterNav from "../Common/FooterNav.svelte";
 import HeaderNav from "../Common/HeaderNav.svelte";
 import AnimalSelection from "../Common/AnimalSelection.svelte";
-
+import Login from "../Connexion/Login.svelte";
 import {animalSelections} from "../store.js"
 import Services from "../Common/Services.svelte";
 
@@ -54,28 +54,7 @@ import Services from "../Common/Services.svelte";
         <HeaderNav/>
     </div>
     <div id="home-content">
-        <div id="home-intro">
-            <img src="images/background_clinique.png" alt="clinique">
-            <p>
-                Sauver l'espoir, sauver les animaux qui sont notre espoir <br>
-                "Konnar Lorenz" <br>
-                La bien être de vos animaux de compagnie est notre priorité
-            </p>
-        </div>
-        <div id="making-appointment" class="home-content">
-            <h2 id="making-appointment-title"><span>Prise de rendez-vous</span><i class="fas fa-calendar-alt"></i></h2>
-            <div id="animal-selection">
-                {#each $animalSelections as animalSelection}
-                    <AnimalSelection text={animalSelection.text} image={animalSelection.image}/>
-                {/each}                
-            </div>
-        </div>
-        <div id="services" class="home-content">
-            <h2 id="services-title"><span>Nos services</span><i class="fas fa-first-aid"></i></h2>
-            <div id="services-content">
-                <Services/>
-            </div>
-        </div>
+        <Login/>
     </div>
     <div id="home-footer">
         <FooterNav/>

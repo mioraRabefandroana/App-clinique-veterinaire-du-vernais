@@ -64,5 +64,11 @@ button:focus {
 
 /**********************************/
 :root{
-	--c_green: #26c626
+	--c_green: #26c626;
+	--c_blue: blue;
+	--c_white: #F8F4EC;
+	--c_gray: gray;
+}
+i{
+	color: blue;
 }
