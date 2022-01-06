@@ -44,6 +44,7 @@ function isAuthenticated(){
         border-radius: 20px;
         padding: 10px;
     }
+    
     .home-content h2{
         margin: unset;
 
@@ -95,7 +96,7 @@ function isAuthenticated(){
 </style>
 <div id="home">
     <div id="home-header">
-        <HeaderNav user={ getCurrentUser() } />
+        
     </div>
     <div id="home-content">
         <div id="home-intro" class="home-content">

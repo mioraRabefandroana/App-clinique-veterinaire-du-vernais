@@ -17,13 +17,13 @@
     .service i{
         color: var(--c_blue)
     }
-    .service a{
+    a{
         color: inherit;
         text-decoration: unset;
     }
-    .service a:hover{
+    /* .service a:hover{
         text-decoration: unset;
-    }
+    } */
 </style>
 
 <a href="remote" use:link

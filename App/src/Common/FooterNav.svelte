@@ -1,7 +1,7 @@
 <script>
     import Contact from "../Infos/Contact.svelte";
     import { Router, Link, link, Route } from "svelte-routing";
-    import { activeMenu, MENU } from "../store";
+    import { activeMenu, ANIMAL_TYPE, MENU } from "../store";
 
     export let user=null;
     function goToHome()
@@ -121,7 +121,7 @@
             </a>
         {:else}
             <!-- user not authenticated-->
-            <a href="appointment" use:link>
+            <a href="{"appointment/"+ $ANIMAL_TYPE.SEVERAL}" use:link>
                 <div 
                     class="footer-nav-item"
                     on:click={ goToAppointment }

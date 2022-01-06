@@ -1,6 +1,7 @@
 <script>
+    import { activeMenu, MENU } from "../store";
     export let user=null;
-    export let title="ACCUEIL";
+    export let title= $MENU.HOME;
 </script>
 <style>
     nav{
@@ -53,6 +54,7 @@
     }
 </style>
 <header>
+    <!-- { $activeMenu } -->
     {#if !user}
         <nav id="header-nav">
             <div></div>
@@ -64,7 +66,7 @@
             <div id="menu">
                 <i class="header-nav-icon fas fa-lg fa-bars"></i>
             </div>
-            <h2 id="home-title">{ title }</h2>
+            <h2 id="home-title">{ $activeMenu || title }</h2>
             <div id="search">
                 <i class="header-nav-icon fas fa-lg fa-search"></i>
             </div>

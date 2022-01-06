@@ -1,8 +1,18 @@
 import { writable } from 'svelte/store';
 
+export const animalType = {
+    "CHIEN": "chien",
+    "CHAT": "chat",
+    "POISSON": "poisson",
+    "LAPIN": "lapin",
+    "REPTILE": "reptile",
+    "RONGEUR": "rongeur",
+    "SEVERAL": "several"
+}
+
 // export const currentUser = writable({});
 export const currentUser = writable({
-    id: 2,
+    id: 1,
     name: "user1",
     firstname: "user1",
     email: "user1@gmail.com",
@@ -12,11 +22,18 @@ export const currentUser = writable({
     tel: "0202020202",
     address: "Marseille",
     dateOfBirth: "1993-02-05",
-    job: "jobless"
-    // verificationCode (~)
+    job: "jobless",
+    animals: [{
+        name: "Pongo",
+        category: animalType.CHIEN,
+        breed: "dalmatiens",
+        weight: "10kg",
+        dateOfBirth: "2010-04-01",
+        image: "https://blob.cede.ch/catalog/15991000/15991133_1_92.jpg",
+        vaccins : []
+    }]
 });
 
-export const DB = writable({});
 
 // promotions
 export const promotions = writable([
@@ -27,14 +44,6 @@ export const promotions = writable([
 ]);
 
 
-const animalType = {
-    "CHIEN": "chien",
-    "CHAT": "chat",
-    "POISSON": "poisson",
-    "LAPIN": "lapin",
-    "REPTILE": "reptile",
-    "SEVERAL": "several"
-}
 export const ANIMAL_TYPE = writable(animalType)
 // animal selection : selection d'un animal : {image, text}
 export const animalSelections = writable([
@@ -81,16 +90,16 @@ export const animalSelections = writable([
 ]);
 
 
+let menu = {
+    HOME: "ACCUEIL",
+    CONTACT: "CONTACTS",
+    MAP: "CARTE",
+    HOUR: "HORAIRE",
+    APPOINTMENT: "RENDEZ-VOUS",
+    ANIMAL: "ANIMAUX",
+    INFO: "INFOS PRATIQUE"
+}
+export const MENU = writable(menu);
 
-export const MENU = writable({
-    HOME: "HOME",
-    CONTACT: "CONTACT",
-    MAP: "MAP",
-    HOUR: "HOUR",
-    APPOINTMENT: "APPOINTMENT",
-    ANIMAL: "ANIMAL",
-    INFO: "INFO"
-});
-
-export let activeMenu = writable(MENU.HOME);
+export let activeMenu = writable(menu.HOME);
 

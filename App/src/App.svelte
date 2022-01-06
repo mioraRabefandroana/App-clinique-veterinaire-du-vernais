@@ -18,6 +18,8 @@ import Vaccination from './Service/Vaccination.svelte';
 import Advice from './Service/Advice.svelte';
 
 import Infos from './Infos/Infos.svelte';
+import Login from './Connexion/Login.svelte';
+import HeaderNav from './Common/HeaderNav.svelte';
     
     let url = "";
 
@@ -29,6 +31,9 @@ import Infos from './Infos/Infos.svelte';
         return null;
     }
 </script>
+
+<HeaderNav user={ getCurrentUser() } />
+
 
 <Router url="{url}">
     <Route path="/" component="{Home}" />
@@ -46,6 +51,8 @@ import Infos from './Infos/Infos.svelte';
     <Route path="care" component="{Care}" />
     <Route path="vaccination" component="{Vaccination}" />
     <Route path="advice" component="{Advice}" />
+
+    <Route path="login" component="{Login}" />
 
 </Router>
     
