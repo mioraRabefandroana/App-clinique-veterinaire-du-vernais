@@ -28,26 +28,38 @@
           outline-color: red;
       }
       button{
-          background-color: var(--c_blue);
-          color: var(--c_white);
-          margin: 4px 2px;
-          cursor: pointer; 
+        color: white;
+		padding: 0.5rem 0;
+		margin-top: 0.5rem;
+		display: inline-block;
+		width: 100%;
+		border-radius: 0.25rem;
+		cursor:pointer; 
+        background-color: var(--c_blue);
       }
       :disabled{
           background-color: var(--c_gray);
       }
       .form-content{
-        display: grid;
-        grid-auto-flow: row;
-        grid-row-gap: 3px; 
-        align-content: center;
-        background-color: var(--c_white);    
+        background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+		padding: 50px 20px;
+		text-align: center;
+		max-width: 100%;
+		width: 350px;    
       }
       .form-header{
         color: var(--c_blue);
         align-content: center;
         text-align: center;
       }
+      input[type=text],input[type=password]{
+		padding: 0.5rem 0;
+		margin-top: 0.5rem;
+		border-width: 1px;
+		border-radius: 0.25rem;
+	}
       div{
           text-align: center;
           font-size: x-large;

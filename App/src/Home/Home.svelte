@@ -5,6 +5,7 @@ import AnimalSelection from "../Common/AnimalSelection.svelte";
 import Login from "../Connexion/Login.svelte";
 import {animalSelections} from "../store.js"
 import Services from "../Common/Services.svelte";
+import Register from "../Connexion/Register.svelte";
 
 </script>
 

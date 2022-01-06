@@ -2,6 +2,9 @@ import { writable } from 'svelte/store';
 
 export const user = writable({});
 
+// registration form
+// export const registerForm = useForm(); 
+
 // promotions
 export const promotions = writable([]);
 
