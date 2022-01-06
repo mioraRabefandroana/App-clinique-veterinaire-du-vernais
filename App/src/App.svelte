@@ -11,6 +11,12 @@
     import { currentUser } from './store';
 import Appointment from './Appointment/Appointment.svelte';
 import AnimalList from './Animal/AnimalList.svelte';
+
+import Remote from './Service/Remote.svelte';
+import Care from './Service/Care.svelte';
+import Vaccination from './Service/Vaccination.svelte';
+import Advice from './Service/Advice.svelte';
+
 import Infos from './Infos/Infos.svelte';
     
     let url = "";
@@ -34,6 +40,13 @@ import Infos from './Infos/Infos.svelte';
     </Route>
     <Route path="animal/:type" component="{AnimalList}"/>
     <Route path="infos" component="{Infos}" />
+
+
+    <Route path="remote" component="{Remote}" />
+    <Route path="care" component="{Care}" />
+    <Route path="vaccination" component="{Vaccination}" />
+    <Route path="advice" component="{Advice}" />
+
 </Router>
     
 

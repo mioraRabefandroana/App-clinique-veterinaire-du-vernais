@@ -1,5 +1,6 @@
 <script>
-    
+    import { link } from "svelte-routing";
+
 </script>
 
 <style>
@@ -16,24 +17,35 @@
     .service i{
         color: var(--c_blue)
     }
+    .service a{
+        color: inherit;
+        text-decoration: unset;
+    }
+    .service a:hover{
+        text-decoration: unset;
+    }
 </style>
 
-<div class="service">
+<a href="remote" use:link
+    class="service">
     <i class="fas fa-video"></i>
     <div>{"Consultation à distance"}</div>
-</div>
+</a>
 
-<div class="service">
+<a href="care" use:link
+    class="service">
     <i class="fas fa-user-md"></i>
     <div>{"Soins et suivi"}</div>
-</div>
+</a>
 
-<div class="service">
+<a href="vaccination" use:link
+    class="service">
     <i class="fas fa-syringe"></i>
     <div>{"Vaccination"}</div>
-</div>
+</a>
 
-<div class="service">
+<a href="advice" use:link
+    class="service">
     <i class="fas fa-comments"></i>
     <div>{"Conseils"}</div>
-</div>
+</a>
