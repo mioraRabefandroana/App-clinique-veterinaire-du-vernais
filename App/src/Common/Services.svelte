@@ -16,9 +16,10 @@
         padding: 5px 10px;
         border: 2px solid blue;
         border-radius:  15px;
+        background: rgba(51, 102, 255, 0.2);
     }
     .service i{
-        color: var(--c_green)
+        color: var(--c_blue)
     }
 </style>
 

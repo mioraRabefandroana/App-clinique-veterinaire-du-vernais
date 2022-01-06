@@ -60,9 +60,10 @@ button:not(:disabled):active {
 
 button:focus {
 	border-color: #666;
-}
+}	
 
 /**********************************/
 :root{
-	--c_green: #26c626
+	--c_green: #26c626;
+	--c_blue: blue
 }

@@ -3,7 +3,7 @@ import FooterNav from "../Common/FooterNav.svelte";
 import HeaderNav from "../Common/HeaderNav.svelte";
 import AnimalSelection from "../Common/AnimalSelection.svelte";
 
-import {animalSelections} from "../store.js"
+import {animalSelections, promotions} from "../store.js"
 import Services from "../Common/Services.svelte";
 
 </script>
@@ -15,14 +15,23 @@ import Services from "../Common/Services.svelte";
         grid-row-gap: 3px;
     }
 
+    #home-intro{
+        border: unset !important;
+    }
     #home-intro img{
         width: 100%;
     }
     #home-intro p{
         text-align: center;
         margin: unset;
+        font-size: 12px;
     }
 
+    /* wrapper */
+    #home-content{
+        margin-bottom: 50px;
+    }
+    /* content */
     .home-content{
         border: 2px solid blue;
         border-radius: 20px;
@@ -40,21 +49,51 @@ import Services from "../Common/Services.svelte";
         color: var(--c_green)
     }
 
+    .home-content{
+        /* border: 1px solid red; */
+        margin-bottom: 5px;
+    }
+
     #animal-selection{
         display: grid;
         grid-template-rows: auto auto;
         grid-auto-flow: column;
         grid-auto-columns: max-content;
         grid-gap: 5px;
+
+        padding: 5px;
+        overflow: hidden;
     }
+
+    #promotion{
+        width: 100%;
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+    .promotion{
+        background: red;
+        font-size: 13px;
+        width: 100%;
+        display: block;
+        text-decoration: unset;
+        color: white;
+        text-align: center;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+
 </style>
 <div id="home">
-    <div id="promotion"></div>
     <div id="home-header">
         <HeaderNav/>
     </div>
     <div id="home-content">
-        <div id="home-intro">
+        <div id="promotion">
+            {#each $promotions as promotion}
+                <a class="promotion" href={ promotion.url }>{ promotion.text }</a>
+            {/each}
+        </div>
+        <div id="home-intro" class="home-content">
             <img src="images/background_clinique.png" alt="clinique">
             <p>
                 Sauver l'espoir, sauver les animaux qui sont notre espoir <br>
@@ -66,7 +105,7 @@ import Services from "../Common/Services.svelte";
             <h2 id="making-appointment-title"><span>Prise de rendez-vous</span><i class="fas fa-calendar-alt"></i></h2>
             <div id="animal-selection">
                 {#each $animalSelections as animalSelection}
-                    <AnimalSelection text={animalSelection.text} image={animalSelection.image}/>
+                    <AnimalSelection text={ animalSelection.text } image={ animalSelection.image }/>
                 {/each}                
             </div>
         </div>
