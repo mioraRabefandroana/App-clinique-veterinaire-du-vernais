@@ -1,6 +1,9 @@
 <script>
-export let image = "";
-export let text = "";
+    import { link } from "svelte-routing";
+
+    export let image = "";
+    export let text = "";
+    export let type = "";
 </script>
 
 <style>
@@ -17,6 +20,8 @@ export let text = "";
         border-radius: 10px;
         overflow: hidden;
         cursor: pointer;
+        text-decoration: none;
+        color: inherit;
     }
     .animal-selection img{
         height: 100%;
@@ -49,7 +54,8 @@ export let text = "";
     }
 </style>
 
-<div class="animal-selection">
+<a href="{ "appointment/"+ type }" use:link
+    class="animal-selection">
     <img src={image} alt="">
     <div class="animal-selection-text">{text}</div>
-</div>
+</a>

@@ -1,10 +1,5 @@
 <script>
-    export let icon = "";
-    export let text = "";
-
-    let iconClassName = "fas " + icon;
-    console.log(icon);
-
+    
 </script>
 
 <style>

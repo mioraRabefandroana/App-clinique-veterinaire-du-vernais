@@ -2,9 +2,25 @@
 import FooterNav from "../Common/FooterNav.svelte";
 import HeaderNav from "../Common/HeaderNav.svelte";
 import AnimalSelection from "../Common/AnimalSelection.svelte";
+    import { Router, Link, link, Route } from "svelte-routing";
 
-import {animalSelections, promotions} from "../store.js"
+import {animalSelections, currentUser, promotions} from "../store.js"
 import Services from "../Common/Services.svelte";
+import HomeIntro from "./HomeIntro.svelte";
+
+
+export function getCurrentUser(){
+    return null; // DEBUG
+
+    if("id" in $currentUser && $currentUser["id"])
+        return $currentUser;
+    return null;
+}
+
+function isAuthenticated(){
+    // debugger;
+    return getCurrentUser();
+}
 
 </script>
 
@@ -18,18 +34,9 @@ import Services from "../Common/Services.svelte";
     #home-intro{
         border: unset !important;
     }
-    #home-intro img{
-        width: 100%;
-    }
-    #home-intro p{
-        text-align: center;
-        margin: unset;
-        font-size: 12px;
-    }
-
     /* wrapper */
     #home-content{
-        margin-bottom: 50px;
+        margin-bottom: 80px;
     }
     /* content */
     .home-content{
@@ -67,8 +74,11 @@ import Services from "../Common/Services.svelte";
 
     #promotion{
         width: 100%;
-        margin-left: -8px;
-        margin-right: -8px;
+        /* margin-left: -8px;
+        margin-right: -8px; */
+
+        border: unset;
+        padding: unset;
     }
     .promotion{
         background: red;
@@ -85,27 +95,26 @@ import Services from "../Common/Services.svelte";
 </style>
 <div id="home">
     <div id="home-header">
-        <HeaderNav/>
+        <HeaderNav user={ getCurrentUser() } />
     </div>
     <div id="home-content">
-        <div id="promotion">
+        <div id="home-intro" class="home-content">
+            {#if !isAuthenticated()}
+                <HomeIntro/>
+            {/if}            
+        </div>
+
+        <div id="promotion" class="home-content">
             {#each $promotions as promotion}
                 <a class="promotion" href={ promotion.url }>{ promotion.text }</a>
             {/each}
         </div>
-        <div id="home-intro" class="home-content">
-            <img src="images/background_clinique.png" alt="clinique">
-            <p>
-                Sauver l'espoir, sauver les animaux qui sont notre espoir <br>
-                "Konnar Lorenz" <br>
-                La bien être de vos animaux de compagnie est notre priorité
-            </p>
-        </div>
+
         <div id="making-appointment" class="home-content">
             <h2 id="making-appointment-title"><span>Prise de rendez-vous</span><i class="fas fa-calendar-alt"></i></h2>
             <div id="animal-selection">
                 {#each $animalSelections as animalSelection}
-                    <AnimalSelection text={ animalSelection.text } image={ animalSelection.image }/>
+                    <AnimalSelection text={ animalSelection.text } image={ animalSelection.image } type={ animalSelection.type }/>
                 {/each}                
             </div>
         </div>
@@ -117,6 +126,6 @@ import Services from "../Common/Services.svelte";
         </div>
     </div>
     <div id="home-footer">
-        <FooterNav/>
+        <!-- <FooterNav user={ $currentUser }/> -->
     </div>
 </div>

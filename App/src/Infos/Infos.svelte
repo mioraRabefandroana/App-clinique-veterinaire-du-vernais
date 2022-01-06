@@ -1,0 +1,1 @@
+<div>INFOS PRATIQUE</div>   
