@@ -60,12 +60,14 @@ button:not(:disabled):active {
 
 button:focus {
 	border-color: #666;
-}	
+}
 
 /**********************************/
 :root{
 	--c_green: #26c626;
-	--c_blue: blue
+	--c_blue: #3498db;
+	--c_white: #F8F4EC;
+	--c_gray: gray;
 }
 
 .page{
@@ -76,3 +78,19 @@ h3{
 	color: var(--c_blue);
 	text-align: center
 }
+i{
+	color: #3498db;
+}
+
+:global(.svelte-radio-group) {
+	/* border: 2px solid #e0e0e0; */
+	padding: 1rem;
+  }
+
+  :global(.svelte-radio) {
+	margin-bottom: 0.5rem;
+  }
+
+  :global(.svelte-radio label) {
+	margin-left: 0.25rem;
+  }

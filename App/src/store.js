@@ -56,6 +56,35 @@ export const currentUser = writable({
 });
 
 
+// user form data
+
+export const formData = {
+    firstname: '',
+    lastname: '',
+    companyname:'',
+    profession:'',
+    activity: '',
+    address: '',
+    phone: '',
+    mail: '',
+    password: '',
+    confirmationPass: '',
+    code: '',
+    gender: [],
+    type: []
+};
+
+//animal from data 
+export const animalData = {
+    name: '',
+    categorie: [],
+    breed:'',
+    weight:'',
+    dateOfBirth: '',
+    image: '',
+    vaccin: []
+};
+
 // promotions
 export const promotions = writable([
     {
