@@ -1,7 +1,7 @@
 <script>
     import { link } from "svelte-routing";
-import { DB } from "../db";
-    import { ANIMAL_TYPE, currentUser } from "../store";
+    import { DB } from "../db";
+    import { activeMenu, ANIMAL_TYPE, currentUser, MENU } from "../store";
 
     let passed = false
 
@@ -14,6 +14,7 @@ import { DB } from "../db";
         return u.appointments;
     })[0]
 
+    $activeMenu = $MENU.APPOINTMENT
     $: appointments = userAppointments.filter(a => (a.passed.toString() == passed.toString()));
 
 </script>
@@ -47,7 +48,11 @@ import { DB } from "../db";
     }
 
     .appointment{
-        border: 1px solid;
+        box-shadow: 0px 2px 6Px -3px black;
+        padding: 5px;
+        border-radius: 5px;        
+        margin-bottom: 7px;
+
     }
     .details{
         display: grid;
@@ -56,7 +61,7 @@ import { DB } from "../db";
         grid-column-gap: 5px;
     }
     .reason{
-        border: 1px solid;
+        /* border: 1px solid; */
     }
     .animal div{
         font-weight: bold;
@@ -66,6 +71,44 @@ import { DB } from "../db";
         height: 60px;
         border-radius: 60px;
     }
+
+    .appointment-title{
+        background-color: var(--c_blue);
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+
+        display: grid;
+        grid-template-columns: max-content 1fr;
+    }
+
+    .edit-btn{
+        justify-self: end;
+    }
+    .edit-btn i{
+        color: white !important;
+    }
+
+    #new-appointment{
+        display: block;
+        background: var(--c_blue);
+        color: white;
+        border-radius: 35px;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 5px;
+        font-size: 24px;
+    }
+    i{
+        color: white;
+    }
+    /* #new-appointment{
+        padding: 10px;
+        margin-bottom: 10px;
+        display: block;
+        font-size: 24px;
+        background-color: white;
+    } */
 </style>
 
 <div class="page">
@@ -73,9 +116,12 @@ import { DB } from "../db";
 <a
     href="{"/appointment/"+$ANIMAL_TYPE.SEVERAL}"
     use:link
- id="new-appointment">
+>
+ <div  id="new-appointment">
     <i class="fas fa-lg fa-calendar-plus"></i>
     <span>Prendre rendez-vous</span>
+ </div>
+    
 </a>
 
 <div id="myappointment">
@@ -93,11 +139,12 @@ import { DB } from "../db";
     <div class="list">
         {#each appointments as a}
             <div class="appointment">
-                <div>
+                <div class="appointment-title">
                     <span class="date-hour">{ a.date + " à " +  a.hour}</span>
                     {#if !passed}
-                        <a href="#" class="edit-btn">
-                            modifier
+                        <a href="#" class="edit-btn" title="modifier">
+                            <!-- modifier -->
+                            <i class="fas fa-lg fa-edit"></i>
                         </a>
                     {/if}
                 </div>
@@ -110,6 +157,7 @@ import { DB } from "../db";
                         {/each}
                     </div>
                     <div class="reason">
+                        Détails: <br>
                         { a.reason }
                     </div>
                 </div>

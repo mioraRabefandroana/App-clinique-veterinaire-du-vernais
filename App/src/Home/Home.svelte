@@ -16,6 +16,7 @@
     }
 
     function isAuthenticated(){
+        
         return $currentUser && $currentUser["id"];
     }
 
@@ -93,10 +94,7 @@
     }
 
 </style>
-<div id="home">
-    <div id="home-header">
-        
-    </div>
+<div id="home" class="page">
     <div id="home-content">
         <div id="home-intro" class="home-content">
             {#if !isAuthenticated()}
@@ -106,7 +104,7 @@
 
         <div id="promotion" class="home-content">
             {#each $promotions as promotion}
-                <a class="promotion" href={ promotion.url }>{ promotion.text }</a>
+                <a class="promotion" href="/promotions">{ promotion.text }</a>
             {/each}
         </div>
 
@@ -124,8 +122,5 @@
                 <Services/>
             </div>
         </div>
-    </div>
-    <div id="home-footer">
-        <!-- <FooterNav user={ $currentUser }/> -->
     </div>
 </div>

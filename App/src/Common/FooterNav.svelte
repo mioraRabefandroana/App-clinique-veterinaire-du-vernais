@@ -1,7 +1,7 @@
 <script>
     import Contact from "../Infos/Contact.svelte";
     import { Router, Link, link, Route } from "svelte-routing";
-    import { activeMenu, ANIMAL_TYPE, MENU } from "../store";
+    import { activeMenu, ANIMAL_TYPE, currentUser, MENU } from "../store";
 
     export let user=null;
     function goToHome()
@@ -67,7 +67,7 @@
     }
 
     .footer-nav-item[activeMenu=true]{
-        background-color: blue;
+        background-color: var(--c_blue);
         color: white;
     }
     .footer-nav-item[activeMenu=true] i{
@@ -89,7 +89,7 @@
                 <div>Accueil</div>
             </div>
         </a>
-        {#if !user || !user["id"]}
+        {#if !$currentUser || !$currentUser["id"]}
             <!-- user not authenticated-->
             <a href="contact" use:link>
                 <div 
@@ -120,7 +120,7 @@
                 </div>
             </a>
         {:else}
-            <!-- user not authenticated-->
+            <!-- user authenticated-->
             <a href="myappointment" use:link>
                 <div 
                     class="footer-nav-item"

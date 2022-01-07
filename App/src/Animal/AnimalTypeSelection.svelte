@@ -1,9 +1,21 @@
 <script>
-    import { link } from "svelte-routing";
+    import { link, navigate} from "svelte-routing";
+    import { currentUser } from "../store";
 
     export let image = "";
     export let text = "";
     export let type = "";
+
+    function checkUser(e)
+    {
+        if(!$currentUser || !("id" in $currentUser))
+        {
+            e.preventDefault;
+            navigate("/login");
+            return;
+        }
+        navigate("appointment/"+ type);
+    }
 </script>
 
 <style>
@@ -54,8 +66,11 @@
     }
 </style>
 
-<a href="{ "appointment/"+ type }" use:link
+<!-- <a href="{ "appointment/"+ type }" use:link on:click={ checkUser } -->
+<div
+    on:click={ checkUser }
     class="animal-type-selection">
     <img src={image} alt="">
     <div class="animal-type-selection-text">{ text }</div>
-</a>
+</div>
+<!-- </a> -->

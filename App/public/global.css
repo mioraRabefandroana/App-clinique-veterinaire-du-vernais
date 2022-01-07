@@ -65,11 +65,15 @@ button:focus {
 /**********************************/
 :root{
 	--c_green: #26c626;
-	--c_blue: blue
+	/* --c_blue: blue */
+	--c_blue: #3498db
 }
 
 .page{
 	margin-top: 45px;
+	/* margin-bottom: 500px; */
+	padding-bottom: 50px;
+
 }
 
 h3{

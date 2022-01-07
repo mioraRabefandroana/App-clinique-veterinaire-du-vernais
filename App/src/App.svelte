@@ -23,6 +23,8 @@
     import Infos from './Infos/Infos.svelte';
     import Login from './Connexion/Login.svelte';
     import HeaderNav from './Common/HeaderNav.svelte';
+import Register from './Connexion/Register.svelte';
+import Promotion from './Promotion/Promotion.svelte';
     
     let url = "";
 
@@ -33,16 +35,21 @@
             return $currentUser;
         return null;
     }
+
+    $: user = $currentUser;
+    console.log("----APP-----", $currentUser);
+    console.log("----APPZZ-----", $currentUser);
 </script>
 
-<HeaderNav user={ getCurrentUser() } />
 
 
 <Router url="{url}">
+    <HeaderNav user={ getCurrentUser() } />
     <Route path="/" component="{Home}" />
     <Route path="contact" component="{Contact}" />
     <Route path="map" component="{Map}" />
     <Route path="hour" component="{Hours}" />
+    <Route path="hours" component="{Hours}" />
     <Route path="appointment/:type" component="{Appointment}" let:params >
         <BlogPost type="{params.type}" />
     </Route>
@@ -59,6 +66,11 @@
     <Route path="advice" component="{Advice}" />
 
     <Route path="login" component="{Login}" />
+
+    
+    <Route path="login" component="{Login}" />
+    <Route path="register" component="{Register}"/>
+    <Route path="promotions" component="{Promotion}"/>
 
 </Router>
     

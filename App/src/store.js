@@ -10,7 +10,7 @@ export const animalType = {
     "SEVERAL": "several"
 }
 
-// export const currentUser = writable({});
+export const currentUser0 = writable({});
 export const currentUser = writable({
     id: 1,
     name: "user1",
@@ -144,3 +144,35 @@ export const MENU = writable(menu);
 
 export let activeMenu = writable(menu.HOME);
 
+
+////////////////////////////////////////////////////:::
+
+
+// user form data
+
+export const formData = {
+    firstname: 'Gzry',
+    lastname: 'THE',
+    companyname:'sa',
+    profession:'Taximan',
+    activity: '-',
+    address: 'AVignon',
+    phone: '4874794',
+    mail: 'gg@gg.com',
+    password: 'toor',
+    confirmationPass: 'toor',
+    code: '9999',
+    gender: [],
+    type: ['Particulier']
+};
+
+//animal from data 
+export const animalData = {
+    name: 'kiki',
+    categorie: [],
+    breed:'pauve pi',
+    weight:'11',
+    dateOfBirth: '2020-12-12',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Goldfish3.jpg/560px-Goldfish3.jpg',
+    vaccin: []
+};
