@@ -1,12 +1,9 @@
-<script>
-    import { useForm, validators, Hint, required } from "svelte-use-form";
-    import { RadioGroup, Radio } from "svelte-radio";
-    import Steps from '../RegisterForm/Steps.svelte';   
+<script> 
     import {animalData} from '../store';
 	export let active_step;
-    let categories = ['Chien','Chat','Poisson','Oiseau','Rongeur','Rdptile'];
+    let categories = ['Chien','Chat','Poisson','Oiseau','Rongeur','Reptile'];
     const handleSubmit = () => {
-		console.log("Voici vos données => ",animalData);
+		console.log("Voici les informations de l'animal que vous avez ajouté :",animalData);
 	}
 
 </script>

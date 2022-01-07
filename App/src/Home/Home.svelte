@@ -56,7 +56,7 @@ import NewAnimal from "../Animal/NewAnimal.svelte";
         <HeaderNav/>
     </div>
     <div id="home-content">
-        <NewAnimal/>
+        <Register/>
     </div>
     <div id="home-footer">
         <FooterNav/>

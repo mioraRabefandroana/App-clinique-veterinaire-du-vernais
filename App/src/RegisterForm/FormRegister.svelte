@@ -1,16 +1,14 @@
 <script>
     import { useForm, validators, Hint, required } from "svelte-use-form";
-    import { RadioGroup, Radio } from "svelte-radio";
     import {formData} from '../store.js'
 
 	export let active_step;
     let types = ['Particulier','Professionnel'];
     let selectedType = 'Particulier';
     let gender = ['Homme','Femme'];
-    let selectedGender ='';
     let registerForm = useForm();
     const handleSubmit = () => {
-		alert("Voici vos données => ",formData);
+		console.log("Voici vos données => ",formData);
 	}
 
 </script>
