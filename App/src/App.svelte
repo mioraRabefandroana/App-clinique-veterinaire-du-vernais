@@ -30,7 +30,7 @@
         // return null; // DEBUG
 
         if("id" in $currentUser && $currentUser["id"])
-            return currentUser;
+            return $currentUser;
         return null;
     }
 </script>

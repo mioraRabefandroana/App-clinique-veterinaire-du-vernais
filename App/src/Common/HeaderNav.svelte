@@ -55,7 +55,7 @@
 </style>
 <header>
     <!-- { $activeMenu } -->
-    {#if !user}
+    {#if !user|| !user["id"]}
         <nav id="header-nav">
             <div></div>
             <div class="header-nav-item" title="rechercher"><i class="fas fa-lg fa-search"></i></div>

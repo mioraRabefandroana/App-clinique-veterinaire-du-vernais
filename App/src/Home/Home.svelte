@@ -8,7 +8,7 @@
 
 
     export function getCurrentUser(){
-        return null; // DEBUG
+        // return {}; // DEBUG
 
         if("id" in $currentUser && $currentUser["id"])
             return $currentUser;
@@ -16,7 +16,7 @@
     }
 
     function isAuthenticated(){
-        return $currentUser;
+        return $currentUser && $currentUser["id"];
     }
 
     $activeMenu = $MENU.HOME

@@ -36,7 +36,7 @@
         $activeMenu = $MENU.INFO;
     }
 
-    let url="";
+    console.log(user)
 
 </script>
 <style>
@@ -89,7 +89,7 @@
                 <div>Accueil</div>
             </div>
         </a>
-        {#if !user}
+        {#if !user || !user["id"]}
             <!-- user not authenticated-->
             <a href="contact" use:link>
                 <div 
