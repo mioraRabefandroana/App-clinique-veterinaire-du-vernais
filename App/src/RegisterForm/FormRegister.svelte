@@ -1,23 +1,7 @@
 <script>
     import { useForm, validators, Hint, required } from "svelte-use-form";
     import { RadioGroup, Radio } from "svelte-radio";
-    // import {formData} from '../store.js'
-
-    let formData = {
-    firstname: '',
-    lastname: '',
-    companyname:'',
-    profession:'',
-    activity: '',
-    address: '',
-    phone: '',
-    mail: '',
-    password: '',
-    confirmationPass: '',
-    code: '',
-    gender: [],
-    type: []
-};
+    import {formData} from '../store.js'
 
 	export let active_step;
     let types = ['Particulier','Professionnel'];

@@ -2,17 +2,7 @@
     import { useForm, validators, Hint, required } from "svelte-use-form";
     import { RadioGroup, Radio } from "svelte-radio";
     import Steps from '../RegisterForm/Steps.svelte';   
-
-    let animalData = {
-        name: '',
-        categorie: [],
-        breed:'',
-        weight:'',
-        dateOfBirth: '',
-        image: '',
-        vaccin: []
-    };
-
+    import {animalData} from '../store';
 	export let active_step;
     let categories = ['Chien','Chat','Poisson','Oiseau','Rongeur','Rdptile'];
     const handleSubmit = () => {
@@ -91,7 +81,7 @@
         text-align: left;
         color: var(--c_blue);
     }
-    input[type=text],input[type=email],input[type=password]{
+    input[type=text]{
 		width: 100%;
 		/* display: block; */
 		padding: 0.5rem 0;

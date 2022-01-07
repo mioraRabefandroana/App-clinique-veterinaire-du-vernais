@@ -1,3 +1,4 @@
+<!-- Inspired by svelte official website -->
 <script>
 	export let steps = [], currentActive = 1;
 	let circles, progress;

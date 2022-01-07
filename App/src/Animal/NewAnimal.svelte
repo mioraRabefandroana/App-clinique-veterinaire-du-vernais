@@ -1,3 +1,4 @@
+<!-- Inspired by svelte official website -->
 <script>
 	import AnimalForm from './AnimalForm.svelte';
 	import Steps from '../RegisterForm/Steps.svelte';

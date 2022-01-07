@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 
 export const user = writable({});
 
-// form data
+// user form data
 
 export const formData = {
     firstname: '',
@@ -18,6 +18,17 @@ export const formData = {
     code: '',
     gender: [],
     type: []
+};
+
+//animal from data 
+export const animalData = {
+    name: '',
+    categorie: [],
+    breed:'',
+    weight:'',
+    dateOfBirth: '',
+    image: '',
+    vaccin: []
 };
 
 // promotions
