@@ -4,7 +4,7 @@ export const user = writable({});
 
 // form data
 
-export const formData =  writable({
+export const formData = {
     firstname: '',
     lastname: '',
     companyname:'',
@@ -18,7 +18,7 @@ export const formData =  writable({
     code: '',
     gender: [],
     type: []
-});
+};
 
 // promotions
 export const promotions = writable([]);

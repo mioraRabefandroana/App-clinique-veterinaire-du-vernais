@@ -1,22 +1,40 @@
 <script>
     import { useForm, validators, Hint, required } from "svelte-use-form";
     import { RadioGroup, Radio } from "svelte-radio";
-    import {formData} from '../store.js'
+    // import {formData} from '../store.js'
+
+    let formData = {
+    firstname: '',
+    lastname: '',
+    companyname:'',
+    profession:'',
+    activity: '',
+    address: '',
+    phone: '',
+    mail: '',
+    password: '',
+    confirmationPass: '',
+    code: '',
+    gender: [],
+    type: []
+};
 
 	export let active_step;
     let types = ['Particulier','Professionnel'];
     let selectedType = 'Particulier';
     let gender = ['Homme','Femme'];
     let selectedGender ='';
-    const registerForm = useForm();
-    console.log("Your form data => ",formData)
+    let registerForm = useForm();
+    const handleSubmit = () => {
+		alert("Voici vos données => ",formData);
+	}
 
 </script>
 
-<form use:registerForm class="form-container">
+<form use:registerForm class="form-container" on:submit={handleSubmit}>
 	{#if active_step == 'Info'}
         {#each types as type }
-            <input type=radio bind:group={selectedType} name="type" value={type} use:validators={[required]} />
+            <input type=radio bind:group={formData.type} name="type" value={type} use:validators={[required]} />
             {type}  
         {/each}
        
@@ -38,7 +56,7 @@
            <Hint for="profession" on="required">La profession est obligatoire</Hint> <br/>
     
            {#each gender as gender }
-               <input type=radio bind:group={selectedGender} id="gender" name="gender" value={gender} use:validators={[required]}>
+               <input type=radio bind:group={formData.gender} id="gender" name="gender" value={gender} use:validators={[required]}>
                {gender}  
            {/each}
    
@@ -77,7 +95,7 @@
 	{:else if active_step == 'Confirmation' }
 		<div class="message">
 			<!-- <h2>Votre compte a été créé avec succès!</h2> -->
-			<button class="btn submit" disabled={!$registerForm.valid}>Valider l'inscription </button>
+			<button class="btn submit">Valider l'inscription </button>
 		</div>
 	{/if}
 </form>

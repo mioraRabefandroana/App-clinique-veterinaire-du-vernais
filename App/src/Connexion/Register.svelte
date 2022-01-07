@@ -16,8 +16,8 @@
 		
 		<FormRegister active_step={steps[currentActive-1]}/>
 
-		<div class="step-button">
-			<button class="btn" on:click={() => handleProgress(-1)} disabled={currentActive == 1}>Précédent</button>
+		<div class="step-button">			
+            <button class="btn" on:click={() => handleProgress(-1)} disabled={currentActive == 1}>Précédent</button>
 			<button class="btn" on:click={() => handleProgress(+1)} disabled={currentActive == steps.length}>Suivant</button>
 		</div>		
 	</div>	  
