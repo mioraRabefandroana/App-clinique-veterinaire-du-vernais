@@ -137,7 +137,7 @@ import { createEventDispatcher } from "svelte";
     <FinalMessage/>
 {/if}
     <NavigationButtons 
-        previous={ formIndex != 0 && formIndex < (appointmentFormList.length-2)} 
+        previous={ formIndex != 0 && formIndex < (appointmentFormList.length-1)} 
         next={ formIndex < (appointmentFormList.length-2) }
         confirmation={ appointmentFormList[formIndex] == APPOINTMENT_FORM.CONFIRMATION }
         ok={ appointmentFormList[formIndex] == APPOINTMENT_FORM.FINAL_MESSAGE }

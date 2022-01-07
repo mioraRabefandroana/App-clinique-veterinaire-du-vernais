@@ -10,8 +10,8 @@ export const animalType = {
     "SEVERAL": "several"
 }
 
-export const currentUser0 = writable({});
-export const currentUser = writable({
+export const currentUser = writable({});
+export const currentUser0 = writable({
     id: 1,
     name: "user1",
     firstname: "user1",

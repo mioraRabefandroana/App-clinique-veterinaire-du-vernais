@@ -6,7 +6,23 @@
     }
 </script>
 <style>
+    #confirmation{        
+        padding: 20px;
+        background: var(--c_blue);
+        border-radius: 20px;
+        font-size: 20px;
+        font-weight: bold;
 
+        display: grid;
+        grid-row-gap: 5px;
+        border-radius: 3;
+    }
+    #confirmation div{
+        background-color: white;
+        padding: 5px;
+        border-radius: 12px;
+        padding-left: 20px;
+    }
 </style>
 <h3>Confirmation du rendez-vous</h3>
 <div id="confirmation">

@@ -11,6 +11,35 @@ import { createEventDispatcher } from "svelte";
 </script>
 <style>
 
+.disponibility{
+    box-shadow: 0px 2px 6Px -3px black;
+    padding: 5px;
+    border-radius: 5px;        
+    margin-bottom: 7px;
+}
+.disponibility-date{
+    background-color: var(--c_blue);
+    color:white;
+    font-weight: bold;
+    padding: 5px;
+}
+.disponibility-hours{
+    display: grid;
+    grid-auto-flow: column;
+    text-align: center;
+    justify-content: start;
+    grid-column-gap: 10px;
+    padding: 20px
+}
+.disponibility-hour{
+    width: fit-content;
+    background-color: black;
+    color:white;
+    /* font-weight: bold; */
+    padding: 5px;
+    border-radius: 5px;
+    
+}
 </style>
 
 <div id="date-hour-selection">
