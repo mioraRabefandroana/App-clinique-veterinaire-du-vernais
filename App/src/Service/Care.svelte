@@ -18,8 +18,8 @@
         étapes importantes de la vie de votre 
         animal, notamment ses vaccins.
     </p>
-    <div > 
-        <button><i class="fas fa-lg fa-calender"> </i> <span>Rendez-vous</span> </button>
+    <div>
+        <button><i class="fas fa-lg fa-calender"> </i> <span>Prendre rendez-vous</span> </button>
     </div>
 
 </div>
