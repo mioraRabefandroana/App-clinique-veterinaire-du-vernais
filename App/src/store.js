@@ -2,8 +2,23 @@ import { writable } from 'svelte/store';
 
 export const user = writable({});
 
-// registration form
-// export const registerForm = useForm(); 
+// form data
+
+export const formData =  writable({
+    firstname: '',
+    lastname: '',
+    companyname:'',
+    profession:'',
+    activity: '',
+    address: '',
+    phone: '',
+    mail: '',
+    password: '',
+    confirmationPass: '',
+    code: '',
+    gender: [],
+    type: []
+});
 
 // promotions
 export const promotions = writable([]);

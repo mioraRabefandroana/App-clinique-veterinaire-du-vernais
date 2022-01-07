@@ -55,7 +55,7 @@ import Register from "../Connexion/Register.svelte";
         <HeaderNav/>
     </div>
     <div id="home-content">
-        <Login/>
+        <Register/>
     </div>
     <div id="home-footer">
         <FooterNav/>

@@ -1,35 +1,20 @@
 <script>
     import { useForm, validators, Hint, required } from "svelte-use-form";
     import { RadioGroup, Radio } from "svelte-radio";
+    import {formData} from '../store.js'
+
 	export let active_step;
-	let formData = {
-		firstname: '',
-		lastname: '',
-        companyname:'',
-        profession:'',
-		activity: '',
-		address: '',
-		phone: '',
-		mail: '',
-		password: '',
-		confirmationPass: '',
-		code: ''
-	}
-	
     let types = ['Particulier','Professionnel'];
     let selectedType = 'Particulier';
     let gender = ['Homme','Femme'];
     let selectedGender ='';
-    export let registerForm = useForm();
-	const handleSubmit = () => {
-		console.log("Your form data => ",formData)
-	}
+    const registerForm = useForm();
+    console.log("Your form data => ",formData)
 
 </script>
 
-<form use:registerForm class="form-container" on:submit={handleSubmit}>
+<form use:registerForm class="form-container">
 	{#if active_step == 'Info'}
-
         {#each types as type }
             <input type=radio bind:group={selectedType} name="type" value={type} use:validators={[required]} />
             {type}  
@@ -89,10 +74,10 @@
         <label>Code de vérification</label>
             <input type="text" name="code" placeholder="Veuillez saisir le code reçu" bind:value={formData.code} use:validators={[required]} />
             <Hint for="code" on="required">Ce champ est obligatoire</Hint>
-	{:else if active_step == 'Confirmation'}
+	{:else if active_step == 'Confirmation' }
 		<div class="message">
-			<h2>Votre compte a été créé avec succès!</h2>
-			<button class="btn submit">OK </button>
+			<!-- <h2>Votre compte a été créé avec succès!</h2> -->
+			<button class="btn submit" disabled={!$registerForm.valid}>Valider l'inscription </button>
 		</div>
 	{/if}
 </form>

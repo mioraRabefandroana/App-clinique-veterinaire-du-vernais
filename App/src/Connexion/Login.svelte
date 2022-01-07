@@ -1,6 +1,5 @@
 <script>
      import { useForm, validators, Hint, required } from "svelte-use-form";
-    
      const form = useForm();
   </script>
 
