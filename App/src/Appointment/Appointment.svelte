@@ -22,9 +22,10 @@ import { createEventDispatcher } from "svelte";
     // type param
     export let type="";
 
+    console.log("type =>", type)
+
     // curent user animals
-    let animals = $currentUser.animals || [];
-    // console.log(animals);
+    $: animals = (!type || type == $ANIMAL_TYPE.SEVERAL) ? $currentUser.animals : $currentUser.animals.filter(a => a.category == type);
 
     function setAppointment(detail){
         $workingAppointment = {...$workingAppointment, ...detail}
@@ -59,23 +60,24 @@ import { createEventDispatcher } from "svelte";
 
     let formIndex = 0;
 
+    // next page
     function onNext(){        
         if(formIndex == (appointmentFormList.length-1))
             return;
         formIndex++
-        console.log($workingAppointment);
     }
+    // previous page
     function onPrevious(){
         if(formIndex == 0)
             return;
         formIndex--
     }
+
+    // confirm appointment
     function onConfirmation(){
-        // if(formIndex == 0)
-        //     return;
-        console.log($DB)
-        console.log(";;;;;;;;;;;;;;;;;;;;")
         $workingAppointment = {...$workingAppointment, ...{id: Date.now()}};
+
+        // save appointment for the user
         $DB.users.map(u => {
             if(u.id == $currentUser.id)
             {
@@ -84,11 +86,15 @@ import { createEventDispatcher } from "svelte";
                 
             return u;
         }) 
+
+        // clear working appointment
+        $workingAppointment = null;
+
+        // go to the next form
         formIndex++
-        console.log($DB)
     }
     function onOK(){
-        console.log("OK")
+        // console.log("OK")
     }
 </script>
 

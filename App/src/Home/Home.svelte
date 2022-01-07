@@ -1,26 +1,25 @@
 <script>
-import FooterNav from "../Common/FooterNav.svelte";
-import HeaderNav from "../Common/HeaderNav.svelte";
-import AnimalTypeSelection from "../Animal/AnimalTypeSelection.svelte"
+    import AnimalTypeSelection from "../Animal/AnimalTypeSelection.svelte"
     import { Router, Link, link, Route } from "svelte-routing";
 
-import {animalTypeSelections, currentUser, promotions} from "../store.js"
-import Services from "../Common/Services.svelte";
-import HomeIntro from "./HomeIntro.svelte";
+    import {animalTypeSelections, currentUser, promotions, activeMenu, MENU} from "../store.js"
+    import Services from "../Common/Services.svelte";
+    import HomeIntro from "./HomeIntro.svelte";
 
 
-export function getCurrentUser(){
-    return null; // DEBUG
+    export function getCurrentUser(){
+        return null; // DEBUG
 
-    if("id" in $currentUser && $currentUser["id"])
+        if("id" in $currentUser && $currentUser["id"])
+            return $currentUser;
+        return null;
+    }
+
+    function isAuthenticated(){
         return $currentUser;
-    return null;
-}
+    }
 
-function isAuthenticated(){
-    // debugger;
-    return getCurrentUser();
-}
+    $activeMenu = $MENU.HOME
 
 </script>
 

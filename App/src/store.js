@@ -52,6 +52,26 @@ export const currentUser = writable({
         dateOfBirth: "2010-04-01",
         image: "https://blob.cede.ch/catalog/15991000/15991133_1_92.jpg",
         vaccins : []
+    },
+    {
+        id: 4,
+        name: "CCCCCC",
+        category: animalType.CHAT,
+        breed: "dalmatiens",
+        weight: "10kg",
+        dateOfBirth: "2010-04-01",
+        image: "https://cdn.futura-sciences.com/buildsv6/images/wide1920/d/e/3/de38b91166_92399_shutterstock-259729697.jpg",
+        vaccins : []
+    },
+    {
+        id: 5,
+        name: "DDDDD5",
+        category: animalType.CHAT,
+        breed: "dalmatiens",
+        weight: "10kg",
+        dateOfBirth: "2010-04-01",
+        image: "https://cdn.futura-sciences.com/buildsv6/images/wide1920/d/e/3/de38b91166_92399_shutterstock-259729697.jpg",
+        vaccins : []
     }]
 });
 
