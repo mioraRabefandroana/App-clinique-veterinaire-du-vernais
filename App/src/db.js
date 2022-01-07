@@ -9,7 +9,7 @@ export const chien1 = {
     category: animalType.CHIEN,
     breed: "dalmatiens",
     weight: "10kg",
-    dateOfBirth: "2010-04-01",
+    dateOfBirth: "01/01/2000",
     image: "https://blob.cede.ch/catalog/15991000/15991133_1_92.jpg",
     vaccins : []
 }
@@ -26,7 +26,7 @@ export const user1 = {
     sex: "homme",
     tel: "0202020202",
     address: "Marseille",
-    dateOfBirth: "1993-02-05",
+    dateOfBirth: "09/08/1994",
     job: "jobless",
     animals: [
         chien1,

@@ -9,20 +9,20 @@
     import Contact from './Infos/Contact.svelte';
     
     import { currentUser } from './store';
-import Appointment from './Appointment/Appointment.svelte';
-import AnimalList from './Animal/AnimalList.svelte';
-import NewAnimal from './Animal/NewAnimal.svelte';
-import EditAnimal from './Animal/EditAnimal.svelte';
+    import Appointment from './Appointment/Appointment.svelte';
+    import AnimalList from './Animal/AnimalList.svelte';
+    import NewAnimal from './Animal/NewAnimal.svelte';
+    import EditAnimal from './Animal/EditAnimal.svelte';
 
-import Remote from './Service/Remote.svelte';
-import Care from './Service/Care.svelte';
-import Vaccination from './Service/Vaccination.svelte';
-import Advice from './Service/Advice.svelte';
-import MyAppointment from './Appointment/MyAppointment.svelte';
+    import Remote from './Service/Remote.svelte';
+    import Care from './Service/Care.svelte';
+    import Vaccination from './Service/Vaccination.svelte';
+    import Advice from './Service/Advice.svelte';
+    import MyAppointment from './Appointment/MyAppointment.svelte';
 
-import Infos from './Infos/Infos.svelte';
-import Login from './Connexion/Login.svelte';
-import HeaderNav from './Common/HeaderNav.svelte';
+    import Infos from './Infos/Infos.svelte';
+    import Login from './Connexion/Login.svelte';
+    import HeaderNav from './Common/HeaderNav.svelte';
     
     let url = "";
 

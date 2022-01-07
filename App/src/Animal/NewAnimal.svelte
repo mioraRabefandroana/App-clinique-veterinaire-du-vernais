@@ -1,5 +1,10 @@
 <script>
-    console.log("AJOUT D'un animal")
-</script>
+import { activeMenu, MENU } from "../store";
 
-<div>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ùAJOUT D'un animal</div>
+
+    console.log("AJOUT D'un animal")
+    $activeMenu = $MENU.ANIMAL
+</script>
+<div class="page">
+    <div>AJOUT D'un animal</div>
+</div>
