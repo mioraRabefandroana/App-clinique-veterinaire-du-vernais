@@ -121,7 +121,7 @@
             </a>
         {:else}
             <!-- user not authenticated-->
-            <a href="{"appointment/"+ $ANIMAL_TYPE.SEVERAL}" use:link>
+            <a href="myappointment" use:link>
                 <div 
                     class="footer-nav-item"
                     on:click={ goToAppointment }

@@ -7,7 +7,7 @@
 </script>
 
 <style>
-    .animal-selection{
+    .animal-type-selection{
         display: grid;
         grid-template-areas: "area";
         grid-template-columns: max-content;
@@ -23,16 +23,16 @@
         text-decoration: none;
         color: inherit;
     }
-    .animal-selection img{
+    .animal-type-selection img{
         height: 100%;
         width: 100%;
     }
-    .animal-selection *{
+    .animal-type-selection *{
         grid-area: area;
         /* margin: auto; */
     }
    
-    .animal-selection .animal-selection-text{
+    .animal-type-selection .animal-type-selection-text{
         align-self: end;
         justify-self: center;
         background: rgba(20, 248, 20, 0.651);
@@ -41,21 +41,21 @@
         border-bottom-right-radius: 10px;
     }
 
-    .animal-selection:first-child{
+    .animal-type-selection:first-child{
         grid-row: 1/3;
         height: unset;
 
         display: grid;
         grid-template-rows: 1fr max-content;
     }
-    .animal-selection:first-child img{
+    .animal-type-selection:first-child img{
         width: 85px;
         text-align: center;
     }
 </style>
 
 <a href="{ "appointment/"+ type }" use:link
-    class="animal-selection">
+    class="animal-type-selection">
     <img src={image} alt="">
-    <div class="animal-selection-text">{text}</div>
+    <div class="animal-type-selection-text">{ text }</div>
 </a>

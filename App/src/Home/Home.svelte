@@ -1,10 +1,10 @@
 <script>
 import FooterNav from "../Common/FooterNav.svelte";
 import HeaderNav from "../Common/HeaderNav.svelte";
-import AnimalSelection from "../Common/AnimalSelection.svelte";
+import AnimalTypeSelection from "../Animal/AnimalTypeSelection.svelte"
     import { Router, Link, link, Route } from "svelte-routing";
 
-import {animalSelections, currentUser, promotions} from "../store.js"
+import {animalTypeSelections, currentUser, promotions} from "../store.js"
 import Services from "../Common/Services.svelte";
 import HomeIntro from "./HomeIntro.svelte";
 
@@ -62,7 +62,7 @@ function isAuthenticated(){
         margin-bottom: 5px;
     }
 
-    #animal-selection{
+    #animal-type-selection{
         display: grid;
         grid-template-rows: auto auto;
         grid-auto-flow: column;
@@ -113,9 +113,9 @@ function isAuthenticated(){
 
         <div id="making-appointment" class="home-content">
             <h2 id="making-appointment-title"><span>Prise de rendez-vous</span><i class="fas fa-calendar-alt"></i></h2>
-            <div id="animal-selection">
-                {#each $animalSelections as animalSelection}
-                    <AnimalSelection text={ animalSelection.text } image={ animalSelection.image } type={ animalSelection.type }/>
+            <div id="animal-type-selection">
+                {#each $animalTypeSelections as animalTypeSelection}
+                    <AnimalTypeSelection text={ animalTypeSelection.text } image={ animalTypeSelection.image } type={ animalTypeSelection.type }/>
                 {/each}                
             </div>
         </div>

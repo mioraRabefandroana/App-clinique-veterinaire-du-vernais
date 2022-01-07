@@ -67,3 +67,12 @@ button:focus {
 	--c_green: #26c626;
 	--c_blue: blue
 }
+
+.page{
+	margin-top: 45px;
+}
+
+h3{
+	color: var(--c_blue);
+	text-align: center
+}

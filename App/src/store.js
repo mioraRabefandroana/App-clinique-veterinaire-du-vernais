@@ -24,7 +24,28 @@ export const currentUser = writable({
     dateOfBirth: "1993-02-05",
     job: "jobless",
     animals: [{
+        id: 1,
         name: "Pongo",
+        category: animalType.CHIEN,
+        breed: "dalmatiens",
+        weight: "10kg",
+        dateOfBirth: "2010-04-01",
+        image: "https://blob.cede.ch/catalog/15991000/15991133_1_92.jpg",
+        vaccins : []
+    },
+    {
+        id: 2,
+        name: "AAAAAA",
+        category: animalType.CHIEN,
+        breed: "dalmatiens",
+        weight: "10kg",
+        dateOfBirth: "2010-04-01",
+        image: "https://blob.cede.ch/catalog/15991000/15991133_1_92.jpg",
+        vaccins : []
+    },
+    {
+        id: 3,
+        name: "BBBB",
         category: animalType.CHIEN,
         breed: "dalmatiens",
         weight: "10kg",
@@ -46,7 +67,7 @@ export const promotions = writable([
 
 export const ANIMAL_TYPE = writable(animalType)
 // animal selection : selection d'un animal : {image, text}
-export const animalSelections = writable([
+export const animalTypeSelections = writable([
     {
         text: "Plusieurs",
         image: "images/plusieurs_animaux.png",

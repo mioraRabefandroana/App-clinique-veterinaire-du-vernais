@@ -11,11 +11,14 @@
     import { currentUser } from './store';
 import Appointment from './Appointment/Appointment.svelte';
 import AnimalList from './Animal/AnimalList.svelte';
+import NewAnimal from './Animal/NewAnimal.svelte';
+import EditAnimal from './Animal/EditAnimal.svelte';
 
 import Remote from './Service/Remote.svelte';
 import Care from './Service/Care.svelte';
 import Vaccination from './Service/Vaccination.svelte';
 import Advice from './Service/Advice.svelte';
+import MyAppointment from './Appointment/MyAppointment.svelte';
 
 import Infos from './Infos/Infos.svelte';
 import Login from './Connexion/Login.svelte';
@@ -43,7 +46,10 @@ import HeaderNav from './Common/HeaderNav.svelte';
     <Route path="appointment/:type" component="{Appointment}" let:params >
         <BlogPost type="{params.type}" />
     </Route>
-    <Route path="animal/:type" component="{AnimalList}"/>
+    <Route path="myappointment" component="{MyAppointment}" />
+    <Route path="animal" component="{AnimalList}"/>
+    <Route path="animal/new" component="{NewAnimal}"/>
+    <Route path="animal/edit" component="{EditAnimal}"/>
     <Route path="infos" component="{Infos}" />
 
 

@@ -14,14 +14,38 @@ export const DB = writable({
         address: "Marseille",
         dateOfBirth: "1993-02-05",
         job: "jobless",
+
         animals: [{
+            id: 1,
             name: "Pongo",
             category: animalType.CHIEN,
             breed: "dalmatiens",
             weight: "10kg",
             dateOfBirth: "2010-04-01",
-            image: "https://blob.cede.ch/catalog/15991000/15991133_1_92.jpg",
+            image: "/images/pongo.png",
             vaccins : []
-        }]
-    }]
+        }],
+
+        appointments: []
+    }],
+
+    disponibilities: {
+        "07/01/2022": [
+            ["10:00","10:30"],
+            ["10:30","11:00"],
+            ["16:30","17:00"],
+        ],
+        "08/01/2022": [
+            ["10:00","10:30"],
+            ["10:30","11:00"],
+            ["16:30","17:00"],
+        ],
+        "09/01/2022": [
+            ["10:00","10:30"],
+            ["10:30","11:00"],
+            ["16:30","17:00"],
+        ],
+    }
+
+
 });
