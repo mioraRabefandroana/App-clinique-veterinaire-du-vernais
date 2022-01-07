@@ -1,5 +1,6 @@
 <script>
-import { createEventDispatcher } from "svelte";
+    import { createEventDispatcher } from "svelte";
+    import { link, navigate } from "svelte-routing";
 
     import AnimalSelection from "../Animal/AnimalSelection.svelte";
     import NavigationButtons from "../Common/NavigationButtons.svelte";
@@ -18,6 +19,11 @@ import { createEventDispatcher } from "svelte";
 
     // set active menu
     $activeMenu = $MENU.APPOINTMENT
+    
+    if(!$currentUser || !("id" in $currentUser))
+    {
+        navigate("/login");
+    }
 
     // type param
     export let type="";
@@ -96,6 +102,7 @@ import { createEventDispatcher } from "svelte";
     function onOK(){
         // console.log("OK")
     }
+
 </script>
 
 <style>

@@ -1,5 +1,5 @@
 <script>
-    import { link } from "svelte-routing";
+    import { link, navigate } from "svelte-routing";
     import { DB } from "../db";
     import { activeMenu, ANIMAL_TYPE, currentUser, MENU } from "../store";
 
@@ -15,6 +15,12 @@
     })[0]
 
     $activeMenu = $MENU.APPOINTMENT
+
+    if(!$currentUser || !("id" in $currentUser))
+    {
+        navigate("/login");
+    }
+
     $: appointments = userAppointments.filter(a => (a.passed.toString() == passed.toString()));
 
 </script>

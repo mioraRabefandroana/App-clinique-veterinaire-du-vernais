@@ -14,12 +14,12 @@
         grid-auto-flow: column;
         grid-auto-columns: max-content;
         grid-template-columns: 1fr max-content max-content;
-        grid-column-gap: 10px;  
+        grid-column-gap: 17px;
         padding: 5px;
-
+        
         position: fixed;
-        top: 0px;
-        right: 0px;
+        top: 13px;
+        right: 12px;
     }
     
     #header-nav div{
@@ -60,9 +60,9 @@
     {#if !$currentUser || !$currentUser["id"]}
         <nav id="header-nav">
             <div></div>
-            <div class="header-nav-item" title="rechercher"><i class="fas fa-lg fa-search"></i></div>
+            <div class="header-nav-item" title="rechercher"><i class="fas fa-2x fa-search"></i></div>
             <a href="/login" use:link>
-                <div class="header-nav-item" title="connexion"><i class="fas fa-lg fa-user"></i></div>
+                <div class="header-nav-item" title="connexion"><i class="fas fa-2x fa-user"></i></div>
             </a>
         </nav>
     {:else}
