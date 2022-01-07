@@ -1,11 +1,16 @@
 <script>
     import { useForm, validators, Hint, required } from "svelte-use-form";
     const form = useForm();
+    let user = { loggedIn: false };
+
+	function login() {
+		user.loggedIn = !user.loggedIn;
+	}
  </script>
 
  <div class="form-content">
    <div class="form-header">Connexion</div>
-   <form use:form>
+   <form use:form method="post" action="/">
        <div>
            <span><i class="fas fa-user"></i></span> <input type="text" name="pseudo" placeholder="Identifiant" use:validators={[required]} />
            <Hint for="pseudo" on="required">L'identifiant est obligatoire</Hint>
@@ -18,7 +23,7 @@
            <button disabled={!$form.valid}>Se connecter</button>
        </div>
    </form>
-   <a href="#" >S'inscire</a>
+   <a href="/register" use:link >S'inscire</a>
 </div>
 
  <style>

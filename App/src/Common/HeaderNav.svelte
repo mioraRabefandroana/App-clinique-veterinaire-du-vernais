@@ -2,6 +2,7 @@
     import { activeMenu, MENU } from "../store";
     export let user=null;
     export let title= $MENU.HOME;
+    import { Router, Link, link, Route } from "svelte-routing";
 </script>
 <style>
     nav{
@@ -59,7 +60,7 @@
         <nav id="header-nav">
             <div></div>
             <div class="header-nav-item" title="rechercher"><i class="fas fa-lg fa-search"></i></div>
-            <div class="header-nav-item" title="connexion"><i class="fas fa-lg fa-user"></i></div>
+            <div class="header-nav-item" title="connexion"><a href="/login" use:link><i class="fas fa-lg fa-user"></i> </a></div>
         </nav>
     {:else}
         <nav id="header-nav" class="header-nav-authenticated">
