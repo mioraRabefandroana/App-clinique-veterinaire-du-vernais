@@ -8,7 +8,7 @@ import { createEventDispatcher } from "svelte";
 
     import { activeMenu, ANIMAL_TYPE, currentUser, MENU } from "../store";
     
-    import { workingAppointment } from "./appointmentData"
+    import { workingAppointment, appointment0 } from "./appointmentData"
     import Confirmation from "./Confirmation.svelte";
     import DateHourSelection from "./DateHourSelection.svelte";
     import FinalMessage from "./FinalMessage.svelte";
@@ -88,7 +88,7 @@ import { createEventDispatcher } from "svelte";
         }) 
 
         // clear working appointment
-        $workingAppointment = null;
+        $workingAppointment = appointment0;
 
         // go to the next form
         formIndex++

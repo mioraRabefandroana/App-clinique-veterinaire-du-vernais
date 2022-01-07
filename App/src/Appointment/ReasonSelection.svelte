@@ -71,5 +71,3 @@
         <span class="reason-text">{ "Opération" }</span>
     </label>
 </div>
-
-<div>reason</div>

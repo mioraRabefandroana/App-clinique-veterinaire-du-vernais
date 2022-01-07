@@ -14,18 +14,21 @@ export const APPOINTMENT_REASON = {
 //     date: null,
 //     hour: null,
 //     reason: null,
+//     passed: false,
 //     user: {},
 //     animals: []
 // }
 
-export const workingAppointment = writable({    
+export const appointment0 = {    
     id: null,
     date: null,
     hour: null,
     reason: null,
+    passed: false,
     user: null,
     animals: []
-})
+}
+export const workingAppointment = writable(appointment0)
 
 // export const APPOINTMENT_REASON = writable(appointmentReason)
 
