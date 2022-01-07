@@ -8,7 +8,7 @@
 
 </script>
 
-<form class="form-container" on:submit={handleSubmit}>
+<form action='/' class="form-container" on:submit={handleSubmit}>
 	{#if active_step == 'Catégorie'}
         {#each categories as category }
             <input type=radio bind:group={animalData.category} name="type" value={category} />
