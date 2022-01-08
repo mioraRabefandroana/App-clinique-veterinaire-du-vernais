@@ -1,0 +1,17 @@
+{
+    "name": "Appli-Clinique",
+    "icons": [
+        {
+            "src": "/images/512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/images/92.png",
+            "type": "image/png",
+            "sizes": "92x92"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone"
+}

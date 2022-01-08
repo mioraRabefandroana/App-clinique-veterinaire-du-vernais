@@ -38,7 +38,9 @@ export default {
 	},
 	plugins: [
 		svelte({
+            // hydratable: true,
 			compilerOptions: {
+				hydratable: true,
 				// enable run-time checks when not in production
 				dev: !production
 			}
